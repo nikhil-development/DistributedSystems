@@ -1,0 +1,23 @@
+<!DOCTYPE html>    
+<html> 
+
+<br>
+<label><b>Choose the button below if you would like to unsubscribe from topics 
+</b>
+</label> 
+<br>
+
+<form action='/unsub2' method='POST' id='topic'>
+{% for name in unsub %}
+<li><span class="unsub">
+<br><br>
+</span>
+<input type="checkbox" id="topic" name="topic" value="{{ name }}"/>{{ name }}>
+<!-- <label for="topic"> I have a car</label><br> -->
+<br>
+</li>
+{% endfor %}
+<input class="btn btn-default" type="submit" name="log" id="log" value="Button">  
+</form>
+
+</html>

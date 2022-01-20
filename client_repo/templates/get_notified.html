@@ -1,0 +1,49 @@
+<!DOCTYPE html>    
+<html>    
+<head>    
+    <title>Subscriber - These are the messages of the topics you have subscribed to</title>    
+    <link rel="stylesheet" type="text/css" href="css/style.css">  
+    <div id="groupcall"></div>  
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+   
+    <script>
+        var set_delay = 5000,
+                callout = function () {
+                    $.ajax({
+                    url: "/get_notified1",
+                    type: "GET",
+                    async: false,
+                    success: function(data) {
+                    
+                        console.log(data)
+                        $('#groupcall').empty();
+                        $("#groupcall").append(JSON.stringify(data));
+                       
+
+                    },
+                    
+                    dataType: "json",
+                    complete: setTimeout(function() {callout()}, 2000),
+                    timeout: 2000
+                    })
+                   
+                }
+    callout();
+
+    </script>
+    
+
+ <button type="button" onclick="callout()">Get Notifications </button>
+</head>
+
+
+
+
+
+<!-- {% for name in messages %}
+<li><span class="messages">    
+<br>
+</span>
+<input type="hidden" name="messages[]" value="{{ name }}"/>{{ name }}
+</li>
+{% endfor %} -->

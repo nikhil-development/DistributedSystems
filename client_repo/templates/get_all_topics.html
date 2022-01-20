@@ -1,0 +1,47 @@
+<!DOCTYPE html>    
+<html>    
+<head>    
+    <title>Hello Subscriber! - These are the Topics you have Subscribed to</title>    
+    <link rel="stylesheet" type="text/css" href="css/style.css">    
+</head>
+
+<label><b>LIST OF ALL TOPICS AVAILABLE IN THE ENTIRE PUB-SUB SYSTEM
+</b>    
+</label> 
+
+<br><br><br>
+<label>Choose the ones you would like to subscribe to 
+</label> 
+
+<form action='/submit_topics' method='POST' id='topic'>
+{% for name in topics %}
+<li><span class="topics">
+<br><br>
+</span>
+<input type="checkbox" id="topic" name="topic" value="{{ name }}"/>{{ name }}>
+<!-- <label for="topic"> I have a car</label><br> -->
+<br>
+</li>
+{% endfor %}
+<br>
+<input class="btn btn-default" type="submit" name="log" id="log" value="Button">  
+</form>
+
+<br><br><br>
+<label>Choose the button below if you would like to unsubscribe from topics 
+</label> 
+
+<br><br>
+<form action='/unsub1' method='POST' id='topic'>
+<input class="btn btn-default" type="submit" name="log1" id="log1" value="Button">  
+</form>
+
+</html>
+
+
+<!-- <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+<label for="vehicle1"> I have a bike</label><br>
+<input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+<label for="vehicle2"> I have a car</label><br>
+<input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+<label for="vehicle3"> I have a boat</label><br> -->

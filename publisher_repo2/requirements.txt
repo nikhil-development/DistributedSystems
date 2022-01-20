@@ -1,0 +1,6 @@
+kafka-python
+requests
+typing
+Flask
+sqlalchemy
+mysql-connector
